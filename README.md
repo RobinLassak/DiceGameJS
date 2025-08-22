@@ -1,4 +1,4 @@
-#  Pig Game - Školní domácí cvičení
+# Pig Game - Školní domácí cvičení
 
 **Autor:** Robin Lassak  
 **Předmět:** JavaScript  
@@ -8,9 +8,10 @@
 
 Pig Game je klasická kostková hra pro dva hráče implementovaná v čistém JavaScriptu. Hra je součástí školního domácího cvičení zaměřeného na práci s JavaScriptem, DOM manipulací a event handlingem.
 
-##  Jak hrát
+## Jak hrát
 
 ### Pravidla hry:
+
 1. **Cíl:** Jako první dosáhnout celkového skóre 100 bodů
 2. **Průběh hry:**
    - Hráči se střídají v hodech kostkou
@@ -19,18 +20,19 @@ Pig Game je klasická kostková hra pro dva hráče implementovaná v čistém J
    - Hráč může kdykoliv "držet" své aktuální skóre a přičíst ho k celkovému
 
 ### Ovládání:
+
 - ** Roll dice** - Hod kostkou
 - ** Hold** - Držet aktuální skóre a přepnout hráče
 - ** New game** - Začít novou hru
 
-##  Technologie
+## Technologie
 
 - **HTML5** - Struktura aplikace
 - **CSS3** - Stylování a animace
 - **JavaScript (ES6+)** - Herní logika a DOM manipulace
 - **GitHub Actions** - Automatické nasazení
 
-##  Struktura projektu
+## Struktura projektu
 
 ```
 Hra_Kostka/
@@ -48,6 +50,7 @@ Hra_Kostka/
 ## Spuštění aplikace
 
 1. **Lokální spuštění:**
+
    - Stáhněte si všechny soubory
    - Otevřete `index.html` v prohlížeči
    - Zadejte jména hráčů a začněte hrát
@@ -56,31 +59,35 @@ Hra_Kostka/
    - Aplikace je automaticky nasazována na Endora hosting
    - Aktualizace se nasazují při push do master větve
 
-## 💻 Funkce aplikace
+## Funkce aplikace
 
 ### Herní mechaniky:
--  Generování náhodných hodů kostkou (1-6)
--  Přepínání mezi hráči
--  Sledování aktuálního a celkového skóre
--  Vizuální indikace aktivního hráče
--  Reset hry
+
+- Generování náhodných hodů kostkou (1-6)
+- Přepínání mezi hráči
+- Sledování aktuálního a celkového skóre
+- Vizuální indikace aktivního hráče
+- Reset hry
 
 ### UI/UX prvky:
--  Moderní design s glassmorphism efektem
--  Responzivní layout
--  Animace a přechody
--  Vizuální zpětná vazba pro aktivního hráče
--  Skrytí kostky před začátkem hry
+
+- Moderní design s glassmorphism efektem
+- Responzivní layout
+- Animace a přechody
+- Vizuální zpětná vazba pro aktivního hráče
+- Skrytí kostky před začátkem hry
 
 ### Technické funkce:
--  DOM manipulace
--  Event listeners
--  CSS třídy pro stav hry
--  Automatické nasazení přes GitHub Actions
 
-##  Konfigurace
+- DOM manipulace
+- Event listeners
+- CSS třídy pro stav hry
+- Automatické nasazení přes GitHub Actions
+
+## Konfigurace
 
 ### Prettier nastavení:
+
 ```json
 {
   "singleQuote": true,
@@ -89,36 +96,40 @@ Hra_Kostka/
 ```
 
 ### Nasazení:
+
 Aplikace používá GitHub Actions pro automatické nasazení na FTP server (Endora) při push do master větve.
 
-##  Herní logika
+## Herní logika
 
 ### Klíčové proměnné:
+
 - `currentScore` - Aktuální skóre hráče
 - `totalScore` - Pole celkových skóre obou hráčů
 - `activePlayer` - Index aktivního hráče (0 nebo 1)
 
 ### Hlavní funkce:
+
 - `inicializace()` - Nastavení počátečního stavu hry
 - `switchPlayer()` - Přepnutí aktivního hráče
 - Event listeners pro tlačítka
 
-##  Design
+## Design
 
 Aplikace používá moderní design s:
+
 - **Font:** Nunito (Google Fonts)
 - **Barvy:** Fialová paleta s růžovými akcenty
 - **Efekty:** Glassmorphism, stíny, animace
 - **Layout:** Flexbox pro responzivní design
 
-##  Poznámky k implementaci
+## Poznámky k implementaci
 
 - Kód je psán v češtině pro lepší srozumitelnost
 - Používá moderní JavaScript funkce
 - Implementuje čistou DOM manipulaci bez frameworků
 - Obsahuje komentáře pro lepší pochopení kódu
 
-##  Odkazy
+## Odkazy
 
 - **Autor:** Robin Lassak
 - **Hosting:** Endora (automatické nasazení)
@@ -126,4 +137,4 @@ Aplikace používá moderní design s:
 
 ---
 
-*Tento projekt je školním domácím cvičením zaměřeným na praktické použití JavaScriptu, DOM manipulace a moderních webových technologií.*
+_Tento projekt je školním domácím cvičením zaměřeným na praktické použití JavaScriptu, DOM manipulace a moderních webových technologií._
