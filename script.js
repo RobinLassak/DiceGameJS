@@ -52,12 +52,16 @@ function inicializace() {
   document.querySelector(`.player--1`).classList.remove('player--winner');
   document.querySelector(`.player--1`).classList.remove('player--active');
   document.querySelector(`.player--0`).classList.add('player--active');
+  
+  //Aktivace tlacitek
+  buttonRoll.disabled = false;
+  buttonHold.disabled = false;
 }
 
 //Funkce pro prepnuti hracu
 function switchPlayer() {
   //Pri zmene hrace se automaticky vynuluje pole pro aktualni hod
-  document.querySelector(`#score--${activePlayer}`).textContent = 0;
+  document.querySelector(`#current--${activePlayer}`).textContent = 0;
 
   //Zajisti prepnuti hracu pri vyvolani funkce
   activePlayer = activePlayer === 0 ? 1 : 0;
@@ -78,7 +82,7 @@ buttonRoll.addEventListener('click', function () {
   diceElement.classList.remove('hidden');
 
   //Zobrazeni aktualniho hodu u kazdeho hrace
-  document.querySelector(`#score--${activePlayer}`).innerHTML = diceNum;
+  document.querySelector(`#current--${activePlayer}`).innerHTML = diceNum;
 
   //Zajisti zmenu obrazku kostky podle aktualne vygenerovaneho cisla
   diceElement.src = `dice-${diceNum}.png`;
@@ -88,6 +92,24 @@ buttonRoll.addEventListener('click', function () {
       currentScore;
   } else {
     currentScore = 0;
+    document.querySelector(`#current--${activePlayer}`).textContent = 0;
+    switchPlayer();
+  }
+});
+
+//Funkce pro drzeni skore
+buttonHold.addEventListener('click', function () {
+  //Pricteni aktualniho skore k celkovemu skore aktivniho hrace
+  totalScore[activePlayer] += currentScore;
+  document.querySelector(`#score--${activePlayer}`).textContent = totalScore[activePlayer];
+
+  //Kontrola vyhry
+  if (totalScore[activePlayer] >= 100) {
+    document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
+    buttonRoll.disabled = true;
+    buttonHold.disabled = true;
+  } else {
+    //Prepnuti hrace
     switchPlayer();
   }
 });
@@ -107,4 +129,13 @@ buttonNewGame.addEventListener('click', function () {
 
   //Pridani tridy hidden kostce - to zajisti ze pred zacatkem hry nebude videt
   diceElement.classList.add('hidden');
+
+  //Odstraneni tridy winner a aktivace tlacitek
+  document.querySelector(`.player--0`).classList.remove('player--winner');
+  document.querySelector(`.player--1`).classList.remove('player--winner');
+  document.querySelector(`.player--1`).classList.remove('player--active');
+  document.querySelector(`.player--0`).classList.add('player--active');
+  
+  buttonRoll.disabled = false;
+  buttonHold.disabled = false;
 });

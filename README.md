@@ -138,3 +138,4 @@ Aplikace používá moderní design s:
 ---
 
 _Tento projekt je školním domácím cvičením zaměřeným na praktické použití JavaScriptu, DOM manipulace a moderních webových technologií._
+
